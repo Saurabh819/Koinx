@@ -5,18 +5,19 @@ const etherRoutes = require('./api/controller/etherController')
 var app = express();
 const mongoose = require('mongoose');
  
+const username = "Saurabh819";
+const password = "Saurabh@1234";
+const cluster = "cluster0.ue662";
+const dbname = "KoinxDB";
 
-
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://Saurabh819:<password>@cluster0.ue662.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
+// mongoose.connect(
+//   `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
+//   {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+//   }
+// );
 
 
 

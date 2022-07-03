@@ -1,4 +1,6 @@
 const axios = require('axios');
+const EtherPriceDB = require('../model/etherPriceModel')
+const mongoose = require('mongoose');
 
 // GET: fetch crypto transaction
 async function fetchCrptoTransaction(request) {
@@ -28,10 +30,21 @@ async function fetchEtherumPrice() {
 async function storeEtheruemPrice() {
     console.log("hi")
 
-   setInterval(async() => {
-    var etherumPrice= await fetchEtherumPrice()
-    console.log(etherumPrice)
-   }, 3000);
+  // setInterval(async() => {
+    var etherumPriceData= await fetchEtherumPrice()
+    console.log(etherumPriceData)
+    // const etherumPrices = new EtherPriceDB({
+    //     _id: new mongoose.Types.ObjectId(),
+    //     created_date: new Date(),
+        
+    //     etherPrice: etherumPriceData[2]?.ethereum
+    // })
+    // inserting user data
+    // etherumPrices.save(function(err){
+    //     if(err) console.log(err); 
+    //   });
+
+  // }, 3000);
     
 }
 
