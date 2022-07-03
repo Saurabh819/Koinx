@@ -4,19 +4,20 @@ var cors = require('cors');
 const etherRoutes = require('./api/controller/etherController')
 var app = express();
 const mongoose = require('mongoose');
- 
 const username = "Saurabh819";
-const password = "Saurabh@1234";
+const password = "Saurabh1";
 const cluster = "cluster0.ue662";
 const dbname = "KoinxDB";
-
-var  mongoAtlasUri = `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`;
-mongoose.connect(
-      mongoAtlasUri,
-      { useNewUrlParser: true, useUnifiedTopology: true },
-      () => console.log(" Mongoose is connected")
-    );
-
+const uri = `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+mongoose.connect(uri)
+mongoose.connection.on('connected',()=>{
+    console.log('database connected')
+})
+mongoose.connection.on('error',(err)=>{
+    if(err){
+        console.log('database not  connected',err)
+    }
+})
 
 //use body parser for parsing req body
 app.use(bodyParser.urlencoded({extended : false}));

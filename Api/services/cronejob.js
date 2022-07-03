@@ -25,12 +25,13 @@ async function storeEtheruemPrice() {
         _id: new mongoose.Types.ObjectId(),
         etherPrice: etherumPriceData[2]?.ethereum
     })
-    // inserting user data
+    
+   
     await etherumPrices.save(function(err){
         if(err) console.log(err); 
       });
 
-  }, 3000);
+  }, 600000);
     
 }
 module.exports = { storeEtheruemPrice}
