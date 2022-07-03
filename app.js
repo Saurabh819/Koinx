@@ -10,15 +10,12 @@ const password = "Saurabh@1234";
 const cluster = "cluster0.ue662";
 const dbname = "KoinxDB";
 
-// mongoose.connect(
-//   `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
-//   {
-//     useNewUrlParser: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true
-//   }
-// );
-
+var  mongoAtlasUri = `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+mongoose.connect(
+      mongoAtlasUri,
+      { useNewUrlParser: true, useUnifiedTopology: true },
+      () => console.log(" Mongoose is connected")
+    );
 
 
 //use body parser for parsing req body
