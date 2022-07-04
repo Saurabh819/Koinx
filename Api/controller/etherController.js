@@ -6,7 +6,7 @@ const etherService = require('../services/etherService')
 
 router.get('/post', async(req, res, next)  => {
     
-    const [error,errorMsg, result] = await etherService.fetchCrptoTransaction(req.body);
+    const [error,errorMsg, result] = await etherService.fetchCrptoTransaction(req);
 
     if (error) {
         return res.status(500).json({
