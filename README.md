@@ -6,8 +6,8 @@ Task 2:- When server is started, it will fetch the price of Ethereum every 10 mi
          File Name: cronejob.js
          
 Task 3:- GET api for current balance and current price and second link for calculate balance
-         api path= https://koinx1.herokuapp.com/ether/getbalance
-         api path= https://koinx1.herokuapp.com/ether/calculatebalance
+         api path= https://koinx1.herokuapp.com/ether/getbalance?address=0xce94e5621a5f7068253c42558c147480f38b5e0d
+         api path= https://koinx1.herokuapp.com/ether/calculatebalance?address=0xce94e5621a5f7068253c42558c147480f38b5e0d
       
          
          
