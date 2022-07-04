@@ -10,3 +10,4 @@ var etherPriceSchema = new Schema({
 });
 
 module.exports = mongoose.model('etherumPrice', etherPriceSchema)
+
